@@ -12,6 +12,7 @@ console.log($inputName);
 console.log($selectJob);
 console.log($inputJob);
 console.log($design);
+console.log($puns);
 
 document.addEventListener("DOMContentLoaded", function (e) {
   console.log("Hello");
@@ -30,11 +31,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
     console.log(e.target.value);
 
     if (e.target.value === "js puns") {
-      $color.classList.add("is-hidden");
+      for (let i = 0; i < $heart.length; i++) {
+        const element = $heart[i];
+        element.classList.add("is-hidden");
+      }
+
+      for (let i = 0; i < $puns.length; i++) {
+        const element = $puns[i];
+        element.classList.remove("is-hidden");
+      }
     } else if (e.target.value === "heart js") {
-      $puns.classList.add("is-hidden");
+      for (let i = 0; i < $puns.length; i++) {
+        const element = $puns[i];
+        element.classList.add("is-hidden");
+
+        for (let i = 0; i < $heart.length; i++) {
+          const element = $heart[i];
+          element.classList.remove("is-hidden");
+        }
+      }
     } else {
-      $color.classList.add("is-hidden");
+      for (let i = 0; i < $puns.length; i++) {
+        const element = $puns[i];
+        element.classList.remove("is-hidden");
+
+        for (let i = 0; i < $heart.length; i++) {
+          const element = $heart[i];
+          element.classList.remove("is-hidden");
+        }
+      }
     }
   });
 });
