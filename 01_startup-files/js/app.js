@@ -8,11 +8,14 @@ const $color = document.querySelector("#color");
 const $puns = document.querySelectorAll(".puns");
 const $heart = document.querySelectorAll(".heart");
 
+const $checkbox = document.querySelectorAll("input[type='checkbox']");
+
 console.log($inputName);
 console.log($selectJob);
 console.log($inputJob);
 console.log($design);
 console.log($puns);
+console.log($checkbox);
 
 document.addEventListener("DOMContentLoaded", function (e) {
   console.log("Hello");
@@ -60,6 +63,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
           element.classList.remove("is-hidden");
         }
       }
+    }
+  });
+
+  $checkbox.addEventListener("click", function (e) {
+    if ($checkbox[i].className === "100") {
+      console.log("100$");
     }
   });
 });
